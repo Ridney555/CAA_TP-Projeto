@@ -3,14 +3,14 @@ package Classes;
 /**
  * Classe para representar um automóvel da frota
  */
-public class Automoveis {
+public class Automovel {
     private int id;
     private String modelo;
     private String placa;
     private double capacidade;
     private String status; // Livre, Em Rota, Manutenção
     
-    public Automoveis(int id, String modelo, String placa, double capacidade) {
+    public Automovel(int id, String modelo, String placa, double capacidade) {
         this.id = id;
         this.modelo = modelo;
         this.placa = placa;
@@ -61,7 +61,7 @@ public class Automoveis {
     
     @Override
     public String toString() {
-        return "Automoveis{" +
+        return "Automovel{" +
                 "id=" + id +
                 ", modelo='" + modelo + '\'' +
                 ", placa='" + placa + '\'' +

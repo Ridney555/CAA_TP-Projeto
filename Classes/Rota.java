@@ -4,12 +4,12 @@ package Classes;
  * Classe para representar uma rota entre localidades
  * com informações de distância
  */
-public class Rotas {
+public class Rota {
     private int idOrigem;
     private int idDestino;
     private double distancia;
     
-    public Rotas(int idOrigem, int idDestino, double distancia) {
+    public Rota(int idOrigem, int idDestino, double distancia) {
         this.idOrigem = idOrigem;
         this.idDestino = idDestino;
         this.distancia = distancia;
@@ -42,7 +42,7 @@ public class Rotas {
     
     @Override
     public String toString() {
-        return "Rotas{" +
+        return "Rota{" +
                 "idOrigem=" + idOrigem +
                 ", idDestino=" + idDestino +
                 ", distancia=" + distancia +

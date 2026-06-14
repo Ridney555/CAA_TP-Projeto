@@ -1,0 +1,55 @@
+========================================
+   SETUP - SGE com JavaFX
+========================================
+
+PASSO 1: INSTALAR JAVAFX
+------------------------
+1. Aceda a: https://gluonhq.com/products/javafx/
+2. Clique em "Download"
+3. Selecione "Windows" e a versao mais recente
+4. Faca o download do ZIP (JavaFX SDK)
+5. Descompacte em uma das opcoes:
+   - C:\Program Files\javafx-sdk
+   - C:\Program Files (x86)\javafx-sdk
+   - C:\Users\[seu-usuario]\javafx-sdk
+
+PASSO 2: COMPILAR
+-----------------
+Execute um dos seguintes comandos:
+
+OPCAO A - Usar o script automatico (recomendado):
+   compile.bat
+
+OPCAO B - Comando manual (substitua JAVAFX_PATH pelo seu caminho):
+   javac --module-path "C:\caminho\para\javafx-sdk\lib" ^
+         --add-modules javafx.controls,javafx.graphics,javafx.fxml ^
+         -d . ^
+         Classes\*.java
+
+PASSO 3: EXECUTAR
+-----------------
+Execute um dos seguintes comandos:
+
+OPCAO A - Usar o script automatico:
+   run.bat
+
+OPCAO B - Comando manual (substitua JAVAFX_PATH):
+   java --module-path "C:\caminho\para\javafx-sdk\lib" ^
+        --add-modules javafx.controls,javafx.graphics,javafx.fxml ^
+        -cp . ^
+        Classes.Main
+
+TROUBLESHOOTING
+---------------
+Se obter erro "module not found: javafx.controls"
+- Verifique que JavaFX esta instalado no local correto
+- Edite o arquivo compile.bat ou run.bat e modifique JAVAFX_PATH
+
+Se obter erro "command not found: javac"
+- Certifique-se que Java esta instalado
+- Adicione Java ao PATH do Windows
+
+Se obter erro "cannot find symbol" no DataManager
+- Execute "compile.bat" novamente para recompilar todos os arquivos
+
+========================================

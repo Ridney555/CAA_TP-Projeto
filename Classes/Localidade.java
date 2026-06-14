@@ -4,20 +4,20 @@ package Classes;
  * Classe para representar uma localidade (vértice do grafo)
  * com posição no mapa para visualização
  */
-public class Localidades {
+public class Localidade {
     private int id;
     private String nome;
     private double posX;
     private double posY;
     
-    public Localidades(int id, String nome) {
+    public Localidade(int id, String nome) {
         this.id = id;
         this.nome = nome;
         this.posX = 0;
         this.posY = 0;
     }
     
-    public Localidades(int id, String nome, double posX, double posY) {
+    public Localidade(int id, String nome, double posX, double posY) {
         this.id = id;
         this.nome = nome;
         this.posX = posX;
@@ -59,7 +59,7 @@ public class Localidades {
     
     @Override
     public String toString() {
-        return "Localidades{" +
+        return "Localidade{" +
                 "id=" + id +
                 ", nome='" + nome + '\'' +
                 ", pos=(" + posX + ", " + posY + ")" +

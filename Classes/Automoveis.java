@@ -1,5 +1,8 @@
 package Classes;
-public class Automoveis{
+
+
+public class Automoveis {
+    private int id;
     private String modelo;
     private String placa;
     private double capacidade;
@@ -41,5 +44,4 @@ public class Automoveis{
                "Placa: "+placa+"\n"+
                "Capacidade: "+capacidade;
     }
-
 }

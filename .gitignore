@@ -1,0 +1,12 @@
+# Ficheiros compilados Java
+*.class
+bin/
+
+# Pastas de IDE
+.idea/
+.vscode/
+*.iml
+
+# Sistema
+.DS_Store
+Thumbs.db

@@ -6,9 +6,10 @@ public class Rotas {
     private double distancia;
     private int tempoEsperado;
 
-    public Rotas(String destino, double distancia){
+    public Rotas(String destino, double distancia, int tempoEsperado){
         this.destino = destino;
         this.distancia = distancia;
+        this.tempoEsperado = tempoEsperado;
     }
 
 

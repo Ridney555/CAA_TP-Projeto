@@ -4,10 +4,10 @@ public class Automoveis{
     private String placa;
     private double capacidade;
     
-    public Automoveis(String modelo, String placa, double capaciadade){
+    public Automoveis(String modelo, String placa, double capacidade){
         this.modelo = modelo;
         this.placa = placa;
-        this.capacidade = capaciadade;
+        this.capacidade = capacidade;
     }
 
     public String getModelo(){
@@ -26,12 +26,20 @@ public class Automoveis{
         this.placa = placa;
     }
 
-    public double getCapaciadade(){
+    public double getCapacidade(){
         return capacidade;
     }
 
-    public void setCapaciadade(double capaciadade){
-        this.capacidade = capaciadade;
+    public void setCapacidade(double capacidade){
+        this.capacidade = capacidade;
+    }
+
+    @Override
+    public String toString(){
+        return "-----+ Automovel -------\n" +
+               "Modelo: "+modelo+"\n"+
+               "Placa: "+placa+"\n"+
+               "Capacidade: "+capacidade;
     }
 
 }

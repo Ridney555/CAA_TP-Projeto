@@ -16,4 +16,3 @@ CAA - trabalho pratico funcionalidades do projeto (Grafos/filas)
 4. Base de dados MySQL
 -> Base de Dados - Armazenamento permanente de todos os dados no MySQL.
 -> Relatórios - Gerar  ficheiros (PDF) com o resumo das entregas e estatísticas.
-

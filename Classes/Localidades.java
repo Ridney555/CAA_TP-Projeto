@@ -32,5 +32,16 @@ public class Localidades{
         return cordenadas[1];
     }
 
+    public void latitude(double latitude){
+        if(latitude <= 0 || latitude >= 90){
+            throw new IllegalArgumentException("A coordenada esta errada");
+        }
+    }
+
+    public void longitude(double longitude){
+        if(longitude <= 0 || longitude >= 180){
+            throw new IllegalArgumentException("A coordenada esta errada");  
+        }
+    }
     
 }

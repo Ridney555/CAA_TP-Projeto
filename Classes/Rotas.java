@@ -4,5 +4,12 @@ package Classes;
 public class Rotas {
     private String destino;
     private double distancia;
-    
+    private int tempoEsperado;
+
+    public Rotas(String destino, double distancia){
+        this.destino = destino;
+        this.distancia = distancia;
+    }
+
+
 }

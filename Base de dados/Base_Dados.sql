@@ -3,7 +3,7 @@ create database SGE;
 use SGE;
 
 create table localidades(
-id int,
+id int not null,
 nome varchar (60),
 primary key (id)
 );
@@ -18,15 +18,15 @@ foreign key (idDestenino) references localidades(id)
 );
 
 create table automoveis(
-id int,
+id int not null,
 modelo varchar(50),
 placa varchar(50),
-capcaidade int,
+capaidade int,
 primary key (id)
 );
 
 create table encomendas(
-id int,
+id int not null,
 discricao text,
 idOrigem int,
 idDestino int,
@@ -37,3 +37,5 @@ foreign key (idOrigem) references localidades(id),
 foreign key (idDestino) references localidades(id),
 foreign key (idVeiculo) references automoveis(id)
 );
+
+insert

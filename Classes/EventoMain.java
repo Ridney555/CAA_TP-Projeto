@@ -1,6 +1,6 @@
 package Classes;
 
-public class ATM {
+public class EventoMain {
     public static void main(String[] args){
         
     }

@@ -33,8 +33,5 @@ public class Pilha {
             return info;
         }
     }
-
-    public boolean vazia(){    
-        
-    }
+    
 }

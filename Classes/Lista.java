@@ -1,10 +1,10 @@
 package Classes;
 
-public class ListaDuplamwnteL {
+public class Lista {
     private No inicio;
     private No fim;
 
-    public ListaDuplamwnteL() {
+    public Lista() {
         this.inicio = null;
         this.fim = null;
     }
@@ -88,7 +88,6 @@ public class ListaDuplamwnteL {
         while(atual != null && atual.getInfo() != info){
             atual = atual.getProx();
         }
-
         if(atual == null){
             System.out.println("Evento não foi encontrado");
         }else{

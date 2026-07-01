@@ -10,7 +10,7 @@ public class Eventos {
     private LocalTime HoraFim;
     private int capcidadeMaxima;
 
-    private ListaDuplamwnteL listaParticipantes = new ListaDuplamwnteL();
+    private Lista listaParticipantes = new Lista();
 
     
     public Eventos(String nome, String data, LocalTime HoraInicio, LocalTime HoraFim, int capcidadeMaxima, int id){

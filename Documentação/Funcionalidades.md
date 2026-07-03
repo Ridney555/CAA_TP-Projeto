@@ -18,4 +18,3 @@ CAA - trabalho pratico funcionalidades do projeto (ListasDuplamenteLigada/Pilhas
 4 -> Persistência de Dados e Relatórios(CSV/PDF)
     - CSV: Armazenamento permanente de todas as atividades e históricos de inscricoes em ficheiros .csv , garantindo assim persistência ao desligar o sistema;
     - Relatórios em PDF: gerar um ficheiro PDF com o cronograma oficial e mapa de ocupação do evento a partir dos dados do do ficheiro .csv;
-    

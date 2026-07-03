@@ -70,6 +70,6 @@ public class Eventos {
         this.capcidadeMaxima = capcidadeMaxima;
     }
 
-    //conversao para csv
+    //conversao para cs
     
 }

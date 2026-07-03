@@ -1,10 +1,10 @@
 package Classes;
 
-public class Lista {
+public class ListaDuplamwnteL {
     private No inicio;
     private No fim;
 
-    public Lista() {
+    public ListaDuplamwnteL() {
         this.inicio = null;
         this.fim = null;
     }

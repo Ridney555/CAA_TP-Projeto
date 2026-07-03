@@ -1,3 +1,5 @@
+package Classes;
+
 public class Participante {
     private int id;
     private String nome;

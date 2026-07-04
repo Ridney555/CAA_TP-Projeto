@@ -1,37 +1,38 @@
 package Classes;
 
-//Historico de acoes do usuario, para poder desfazer e refazer acoes
+
 public class Pilha {
     private No topo;
 
-    public Pilha() {
+    public Pilha(){
         this.topo = null;
     }
 
-    public boolean isVazia() {
+    public boolean isVazia(){
         return (topo == null);
     }
 
-    public void push(int info) {
+    public void push(int info){
         No novo = new No(info);
 
-        if (isVazia()) {
+        if(isVazia()){
             topo = novo;
-        } else {
+        }else{
             novo.setProx(topo);
             topo = novo;
         }
     }
 
     public int pop() {
-        if (isVazia()) {
+        if (isVazia()){
             System.out.println("Pilha vazia");
             return -1;
-        } else {
+        }else{
             int info = topo.getInfo();
             topo = topo.getProx();
             return info;
         }
     }
+    
     
 }

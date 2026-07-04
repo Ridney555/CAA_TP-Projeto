@@ -19,12 +19,12 @@ telefone int,
 primary key(id)
 );
 
-insert into aluno()
-values ();
-        
-insert into ()
-values ( )
+create table Inscricao(
+id int,
+idParticipante int,
+idEvento int,
+primary key(id),
+foreign key (idParticipante) references Participante(id),
+foreign key (idEvento) references Eventos(id)
+);
 
-insert into 
-
-update 

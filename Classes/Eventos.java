@@ -1,6 +1,7 @@
 package Classes;
 
 import java.time.LocalTime;
+import java.util.ArrayList;
 
 public class Eventos {
     private int id;
@@ -10,7 +11,7 @@ public class Eventos {
     private LocalTime HoraFim;
     private int capcidadeMaxima;
 
-    private Lista listaParticipantes = new Lista();
+    private ArrayList<Participante> listaParticipantes = new ArrayList<>();
 
     
     public Eventos(String nome, String data, LocalTime HoraInicio, LocalTime HoraFim, int capcidadeMaxima, int id){
@@ -68,8 +69,5 @@ public class Eventos {
 
     public void setCapcidadeMaxima(int capcidadeMaxima){
         this.capcidadeMaxima = capcidadeMaxima;
-    }
-
-    //conversao para cs
-    
+    }    
 }

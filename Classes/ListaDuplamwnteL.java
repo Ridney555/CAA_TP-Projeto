@@ -48,7 +48,7 @@ public class ListaDuplamwnteL {
         }
         No atual = inicio;
 
-        while(atual != null && atual.getInfo() != info){
+        while(atual != null && atual.getInfo() != info){ //essa condição vai percorrer a lista até encontrar o evento com o id informado
             atual = atual.getProx();
         }
 
@@ -57,6 +57,7 @@ public class ListaDuplamwnteL {
             return;
         }
 
+        //vai remover o evento da lista
         if(atual == inicio){
             inicio = atual.getProx();
             if(inicio != null){
@@ -95,5 +96,29 @@ public class ListaDuplamwnteL {
         }
     }
 
+    //retorna umm array com todos os eventos da lista
+    public int[] retornarTodosEventos(){
+        if(isVazia()){
+            System.out.println("Lista vazia");
+            return new int[0];
+        }
+        No atual = inicio;
+        int tamanho = 0;
+
+        //vai contar o tamanho da lista
+        while(atual != null){
+            tamanho++;
+            atual = atual.getProx();
+        }
+
+        int[] eventos = new int[tamanho];//cria uma array com o tamanho da lista
+        atual = inicio;
+        for(int i = 0; i < tamanho; i++){
+            eventos[i] = atual.getInfo();
+            atual = atual.getProx();
+        }
+        return eventos;
+    }
+    
 
 }

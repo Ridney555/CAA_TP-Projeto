@@ -7,6 +7,7 @@ public class EventoMain {
     private static boolean conflitoEncontrado;
 
     public static void main(String[] args){
+        BaseDeDados.testeDeConecxao();
         Scanner scanner = new Scanner(System.in);
 
         GerenciadorEventos gerenciador = new GerenciadorEventos();
@@ -14,9 +15,9 @@ public class EventoMain {
         ListaDuplamwnteL lista = new ListaDuplamwnteL();
 
         Pilha pilha = new Pilha();
-        int opcao = 0;
+        int opcao = -1;
 
-        while(opcao !=5) {
+        while(opcao != 0) {
             System.out.println("\n<---------------------------------------->");
             System.out.println("---------------->  MENU   <-----------------");
             System.out.println("<------------------------------------------>");
@@ -49,16 +50,18 @@ public class EventoMain {
 
                     Eventos novo = new Eventos(nome, data, inicio, fim, capacidade, id);
 
+                    conflitoEncontrado = false;
                     No atual = lista.getInicio();
                     while(atual != null){
                         if(gerenciador.criarEventos(atual.getInfo(), novo)) {
+                            conflitoEncontrado = true;
                             break;
                         }
                         atual = atual.getProx();
                     }
 
                     if(conflitoEncontrado){
-                        System.out.println("Já existe um evento neste data");
+                        System.out.println("Já existe um evento nesta data");
                     }else{
                         lista.inserirFim(novo);
                         pilha.push(novo); 

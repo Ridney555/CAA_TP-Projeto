@@ -12,8 +12,8 @@ public class Pilha {
         return (topo == null);
     }
 
-    public void push(int info){
-        No novo = new No(info);
+    public void push(Eventos evento){
+        No novo = new No(evento);
 
         if(isVazia()){
             topo = novo;
@@ -23,16 +23,39 @@ public class Pilha {
         }
     }
 
-    public int pop() {
+    public Eventos pop() {
         if (isVazia()){
             System.out.println("Pilha vazia");
-            return -1;
+            return null;
         }else{
-            int info = topo.getInfo();
+            Eventos evento = topo.getInfo();
             topo = topo.getProx();
-            return info;
+            return evento;
         }
     }
     
+    public void remover(Eventos evento){
+        if (isVazia()){
+            System.out.println("Pilha vazia");
+            return;
+        }else{
+            No atual = topo;
+            No anterior = null;
+
+            while (atual != null && atual.getInfo() != evento){
+                anterior = atual;
+                atual = atual.getProx();
+            }
+            if (atual == null){
+                System.out.println("Elemento nao foi encontrado na pilha");
+                return;
+            }
+            if(anterior == null){
+                topo = atual.getProx();
+            }else{
+                anterior.setProx(atual.getProx());
+            }
+        }
+    }
     
 }

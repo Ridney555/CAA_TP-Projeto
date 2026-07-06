@@ -7,8 +7,8 @@ public class Eventos {
     private int id;
     private String nome;
     private String data;
-    private LocalTime HoraInicio;
-    private LocalTime HoraFim;
+    private LocalTime horaInicio;
+    private LocalTime horaFim;
     private int capcidadeMaxima;
 
     private ArrayList<Participante> listaParticipantes = new ArrayList<>();
@@ -18,9 +18,13 @@ public class Eventos {
         this.id = id;
         this.nome = nome;
         this.data = data;
-        this.HoraInicio = HoraInicio;
-        this.HoraFim = HoraFim;
+        this.horaInicio = HoraInicio;
+        this.horaFim = HoraFim;
         this.capcidadeMaxima = capcidadeMaxima;
+    }
+
+    public ArrayList<Participante> getListaParticipantes(){
+        return listaParticipantes;
     }
 
     public int getId(){
@@ -48,26 +52,27 @@ public class Eventos {
     }
 
     public LocalTime getHoraInicio(){
-        return HoraInicio;
+        return horaInicio;
     }
 
     public void setHoraInicio(LocalTime HoraInicio){
-        this.HoraInicio = HoraInicio;
+        this.horaInicio = HoraInicio;
     }
 
     public LocalTime getHoraFim(){
-        return HoraFim;
+        return horaFim;
     }
 
     public void setHoraFim(LocalTime HoraFim){
-        this.HoraFim = HoraFim;
+        this.horaFim = HoraFim;
     }
     
-    public int getCapcidadeMaxima(){
+    public int getCapacidadeMaxima(){
         return capcidadeMaxima;
     }
 
-    public void setCapcidadeMaxima(int capcidadeMaxima){
+    public void setCapacidadeMaxima(int capcidadeMaxima){
         this.capcidadeMaxima = capcidadeMaxima;
-    }    
+    }  
+    
 }

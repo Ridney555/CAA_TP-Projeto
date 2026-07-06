@@ -9,12 +9,20 @@ public class ListaDuplamwnteL {
         this.fim = null;
     }
 
+    public No getInicio() {
+        return inicio;
+    }
+
+    public No getFim() {
+        return fim;
+    }
+
     public boolean isVazia(){ 
         return(inicio == null || fim == null);
     }
 
     //metodos para inserir no inicio e no fim
-    public void inserirInicio(int info){
+    public void inserirInicio(Eventos info){
         No novo = new No(info);
 
         if(isVazia()){
@@ -25,9 +33,10 @@ public class ListaDuplamwnteL {
             inicio.setAnt(novo);
             inicio = novo;
         }
+        
     }
 
-    public void inserirFim(int info){
+    public void inserirFim(Eventos info){
         No novo = new No(info);
 
         if(isVazia()){
@@ -41,14 +50,14 @@ public class ListaDuplamwnteL {
     }
     
     //metodo para remover um evento da lista por id
-    public void removerPorId(int info){
+    public void removerPorId(int id){
         if(isVazia()){
             System.out.println("Lista vazia");
             return;
         }
         No atual = inicio;
 
-        while(atual != null && atual.getInfo() != info){ //essa condição vai percorrer a lista até encontrar o evento com o id informado
+        while(atual != null && atual.getInfo().getId() != id){ 
             atual = atual.getProx();
         }
 
@@ -79,28 +88,23 @@ public class ListaDuplamwnteL {
     }
 
     //metodo para procurar um evento por id
-    public void procurarPorId(int info){
+    public Eventos procurarPorId(int id){
         if(isVazia()){
-            System.out.println("Lista vazia");
-            return;
+            return null;
         }
         No atual = inicio;
 
-        while(atual != null && atual.getInfo() != info){
+        while(atual != null && atual.getInfo().getId() != id){
             atual = atual.getProx();
         }
-        if(atual == null){
-            System.out.println("Evento não foi encontrado");
-        }else{
-            System.out.println("Evento foi encontrado: " + atual.getInfo());
-        }
+        return (atual != null) ? atual.getInfo() : null;
     }
 
     //retorna umm array com todos os eventos da lista
-    public int[] retornarTodosEventos(){
+    public Eventos[] retornarTodosEventos(){
         if(isVazia()){
             System.out.println("Lista vazia");
-            return new int[0];
+            return new Eventos[0];
         }
         No atual = inicio;
         int tamanho = 0;
@@ -111,7 +115,7 @@ public class ListaDuplamwnteL {
             atual = atual.getProx();
         }
 
-        int[] eventos = new int[tamanho];//cria uma array com o tamanho da lista
+        Eventos[] eventos = new Eventos[tamanho];//cria uma array com o tamanho da lista
         atual = inicio;
         for(int i = 0; i < tamanho; i++){
             eventos[i] = atual.getInfo();
@@ -119,6 +123,4 @@ public class ListaDuplamwnteL {
         }
         return eventos;
     }
-    
-
 }

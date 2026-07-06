@@ -1,9 +1,9 @@
-create database SGC;
+create database SGE;
 
-use SGC;
+use SGE;
 
-create table Eventos(
-id int,
+create table eventos(
+id int not null,
 nome varchar(50),
 Data date,
 horaInicio time,
@@ -12,15 +12,15 @@ capcidadeMaxima int,
 primary key (id)
 );
 
-create table Participante(
-id int,
+create table participante(
+id int not null,
 nome varchar(50),
 telefone int,
 primary key(id)
 );
 
-create table Inscricao(
-id int,
+create table inscricao(
+id int not null,
 idParticipante int,
 idEvento int,
 primary key(id),
@@ -28,3 +28,6 @@ foreign key (idParticipante) references Participante(id),
 foreign key (idEvento) references Eventos(id)
 );
 
+sp_help 'eventos';
+sp_help 'participante';
+sp_help 'inscricao';

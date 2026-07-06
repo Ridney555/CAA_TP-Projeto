@@ -3,30 +3,31 @@ package Classes;
 public class No{
     private No prox;
     private No ant;
-    private int info;
+    private Eventos info;
 
     //construtores
     public No() {
-        this.info = 0;
+        this.info = null;
         this.prox = null;
+        this.ant = null;
     }
     
-    public No(int info){
+    public No(Eventos info){
         this.info = info;
         this.prox = null;
         this.ant = null;
     }
 
-    public No(int info, No prox, No ant){
+    public No(Eventos info, No prox, No ant){
         this.info = info;
         this.prox = prox;
         this.ant = ant;
     }
     
-    public int getInfo(){
+    public Eventos getInfo(){
         return info;
     }
-    public void setInfo(int info){
+    public void setInfo(Eventos info){
         this.info = info;
     }
     public No getProx() {

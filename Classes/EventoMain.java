@@ -38,11 +38,11 @@ public class EventoMain {
                     scanner.nextLine();
                     System.out.print("Nome do Evento: ");
                     String nome = scanner.nextLine();
-                    System.out.print("Data (DD/MM/AAAA): ");
+                    System.out.print("Data (dd/MM/AAAA): ");
                     String data = scanner.nextLine();
-                    System.out.print("Hora de Início (HH:MM): ");
+                    System.out.print("Hora de Início (h:m): ");
                     LocalTime inicio = LocalTime.parse(scanner.nextLine());
-                    System.out.print("Hora de Fim (HH:MM): ");
+                    System.out.print("Hora de Fim (h:m): ");
                     LocalTime fim = LocalTime.parse(scanner.nextLine());
                     System.out.print("Capacidade Máxima: ");
                     int capacidade = scanner.nextInt();
@@ -62,7 +62,7 @@ public class EventoMain {
                     }else{
                         lista.inserirFim(novo);
                         pilha.push(novo); 
-                        System.out.println("Evento cadastrado com sucesso");
+                        System.out.println("Evento  foi cadastrado com sucesso");
                     }
                     break;
 

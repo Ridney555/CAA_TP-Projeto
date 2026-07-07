@@ -29,5 +29,9 @@ foreign key (idEvento) references Eventos(id)
 );
 
 describe eventos;
-describe participante;
-describe inscricao;
+describe participantes;
+describe eventos;
+
+select * FROM eventos;
+select * FROM particpantes;
+select * FROM inscricao;

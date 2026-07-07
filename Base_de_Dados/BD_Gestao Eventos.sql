@@ -28,6 +28,6 @@ foreign key (idParticipante) references Participante(id),
 foreign key (idEvento) references Eventos(id)
 );
 
-sp_help 'eventos';
-sp_help 'participante';
-sp_help 'inscricao';
+describe eventos;
+describe participante;
+describe inscricao;

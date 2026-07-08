@@ -85,9 +85,48 @@ public class GerenciadorEventos {
             }else{
                 System.out.println("Nao existe nenhum evento com esse id " + id + " no banco de dados");
             }
-            
         }catch (SQLException e){
-            System.out.println("Houve um erro ao remover o evento da base de dados: " + e.getMessage());
+            System.out.println("Aconteceu um erro ao remover o evento da base de dados: " + e.getMessage());
+        }
+    }
+
+    //vai salvar os dados do participante no banco de dados
+    public void salvarParticipanteNoBanco(Participante participante) {
+        String sql = "insert into participante (id, nome, telefone) values (?, ?, ?)";
+        
+        try(Connection conn = BaseDeDados.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql)){
+            
+            stmt.setInt(1, participante.getId());
+            stmt.setString(2, participante.getNome());
+            stmt.setInt(3, participante.getTelefone());
+            stmt.executeUpdate();
+            System.out.println("--> Participante gravado no MySQL!");
+        } catch (SQLException e) {
+            //se ja estiver um participante com o mesmo id e le exibe uma mensagem de erro e continua a inscricao
+            if (e.getErrorCode() == 1062) { 
+                System.out.println("O participante foi cadastrado com sucesso no banco de dados");
+            } else {
+                System.out.println("Aconteceu um erro ao salvar p participante" + e.getMessage());
+            }
+        }
+    }
+
+    //esse metodo ira gravar os participantes e eventos na tabela incricao 
+    public void salvarInscricaoNoBanco(int idInscricao, int idParticipante, int idEvento) {
+        String sql = "insert into inscricao (id, idParticipantes, idEventos) values (?, ?, ?)";
+        
+        try (Connection conn = BaseDeDados.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+            
+            stmt.setInt(1, idInscricao);
+            stmt.setInt(2, idParticipante);
+            stmt.setInt(3, idEvento);
+            
+            stmt.executeUpdate();
+            System.out.println("A inscricao foi feita com sucesso");
+        } catch (SQLException e) {
+            System.out.println("Aconteceu um erro ao salvar a incricao no banco de dados: " + e.getMessage());
         }
     }
 

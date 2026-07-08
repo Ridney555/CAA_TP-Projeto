@@ -102,6 +102,16 @@ public class EventoMain {
 
                         Participante p = new Participante(partId, partNome, partTel);
                         gerenciador.increverParticipantes(p, ev);
+                        if(ev.getListaParticipantes().contains(p)){
+                            //vai salvar os dados do participante na tabela do banco de dados
+                            gerenciador.salvarParticipanteNoBanco(p);
+            
+                            //vai criar um id unico para a tabela incrcao
+                             System.out.print("Digite um ID para confirmar q sua inscricao: ");
+                            int idInscricao = scanner.nextInt();
+                             //faz a conecxao com a tabela inscricao
+                             gerenciador.salvarInscricaoNoBanco(idInscricao, p.getId(), ev.getId());
+                        }
                     }
                     break;
 

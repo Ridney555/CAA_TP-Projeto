@@ -26,7 +26,7 @@ public class EventoMain {
             System.out.println("3 -> Inscrever Participante");
             System.out.println("4 -> Remover Evento por ID");
             System.out.println("5 -> Desfazer Último Cadastro");
-            System.out.println("0 -> Sair");
+            System.out.println("6 -> Sair");
             System.out.print("Escolha uma opção: ");
 
             opcao = scanner.nextInt();
@@ -39,7 +39,7 @@ public class EventoMain {
                     scanner.nextLine();
                     System.out.print("Nome do Evento: ");
                     String nome = scanner.nextLine();
-                    System.out.print("Data (dd/MM/AAAA): ");
+                    System.out.print("Data (AAAA-MM-DD): ");
                     String data = scanner.nextLine();
                     System.out.print("Hora de Início (h:m): ");
                     LocalTime inicio = LocalTime.parse(scanner.nextLine());

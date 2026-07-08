@@ -33,7 +33,7 @@ public class GerenciadorEventos {
         }
     }
 
-    /* essse metodo pega a ultima acao realizada, se a ultima acao foi criar um evento,
+    /*o metodo pega a ultima acao realizada, se a ultima acao foi criar um evento,
      o metodo ira remover o evento da lista de eventos
      */
     public void remover(Participante participante, Eventos evento){
@@ -47,7 +47,7 @@ public class GerenciadorEventos {
 
     //esse metodo tem como funcao salvar os dados no banco dedos
     public void salvarEventoNoBanco(Eventos evento){
-        String sql = "isert into eventos (id, nome, Data, horaInicio, horaFim, capcidadeMaxima) values (, , , , , )";
+        String sql = "insert into eventos (id, nome, Data, horaInicio, horaFim, capcidadeMaxima) values (?, ?, ?, ?, ?, ?)";
         
         try(Connection conn = BaseDeDados.getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql)){

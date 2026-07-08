@@ -62,10 +62,32 @@ public class GerenciadorEventos {
             stmt.setInt(6, evento.getCapacidadeMaxima());
             
             stmt.executeUpdate();
-            System.out.println("O Evento foi Gravado com Sucesso");
+            System.out.println("O Evento foi Gravado com Sucesso no banco de dados");
             
         }catch(SQLException e){
             System.out.println("Houve um erro ao salvar na base de dados: " + e.getMessage());
+        }
+    }
+
+    /*metodo para que ao escolher a opcao de remover um evento por id  ele vai remover 
+    no banco de dados MySql
+    */
+    public void removerEventoDoBanco(int id) {
+        String sql = "delete from eventos where id = ?";
+        
+        try(Connection conct = BaseDeDados.getConnection();
+             PreparedStatement stmt = conct.prepareStatement(sql)) {
+            stmt.setInt(1, id);
+            int linhasAfetadas = stmt.executeUpdate();
+            
+            if (linhasAfetadas > 0) {
+                System.out.println("O Evento de id " + id + " foi apagado com sucesso do banco de dados");
+            }else{
+                System.out.println("Nao existe nenhum evento com esse id " + id + " no banco de dados");
+            }
+            
+        }catch (SQLException e){
+            System.out.println("Houve um erro ao remover o evento da base de dados: " + e.getMessage());
         }
     }
 

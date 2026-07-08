@@ -92,7 +92,7 @@ public class GerenciadorEventos {
 
     //vai salvar os dados do participante no banco de dados
     public void salvarParticipanteNoBanco(Participante participante) {
-        String sql = "insert into participante (id, nome, telefone) values (?, ?, ?)";
+        String sql = "insert into participantes (id, nome, telefone) values (?, ?, ?)";
         
         try(Connection conn = BaseDeDados.getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql)){

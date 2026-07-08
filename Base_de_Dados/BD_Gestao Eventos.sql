@@ -12,7 +12,7 @@ capcidadeMaxima int,
 primary key (id)
 );
 
-create table participante(
+create table participantes(
 id int not null,
 nome varchar(50),
 telefone int,
@@ -24,8 +24,8 @@ id int not null,
 idParticipantes int,
 idEventos int,
 primary key(id),
-foreign key (idParticipante) references participantes(id),
-foreign key (idEvento) references eventos(id)
+foreign key (idParticipantes) references participantes(id),
+foreign key (idEventos) references eventos(id)
 );
 
 describe eventos;

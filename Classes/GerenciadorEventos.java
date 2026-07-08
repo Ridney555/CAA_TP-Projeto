@@ -1,5 +1,9 @@
 package Classes;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
 public class GerenciadorEventos {
    
     /*esse metodo ira percorrer uma lista e verificar se ja nao existe um evento para o mesmo horario,
@@ -38,6 +42,30 @@ public class GerenciadorEventos {
             System.out.println("Participante removido do evento " + evento.getNome());
         } else {
             System.out.println("Participante não está inscrito no evento " + evento.getNome());
+        }
+    }
+
+    //esse metodo tem como funcao salvar os dados no banco dedos
+    public void salvarEventoNoBanco(Eventos evento){
+        String sql = "isert into eventos (id, nome, Data, horaInicio, horaFim, capcidadeMaxima) values (, , , , , )";
+        
+        try(Connection conn = BaseDeDados.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql)){
+            
+            stmt.setInt(1, evento.getId());
+            stmt.setString(2, evento.getNome());
+            
+            stmt.setString(3, evento.getData()); 
+            
+            stmt.setTime(4, java.sql.Time.valueOf(evento.getHoraInicio()));
+            stmt.setTime(5, java.sql.Time.valueOf(evento.getHoraFim()));
+            stmt.setInt(6, evento.getCapacidadeMaxima());
+            
+            stmt.executeUpdate();
+            System.out.println("O Evento foi Gravado com Sucesso");
+            
+        }catch(SQLException e){
+            System.out.println("Houve um erro ao salvar na base de dados: " + e.getMessage());
         }
     }
 

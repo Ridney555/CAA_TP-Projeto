@@ -66,6 +66,9 @@ public class EventoMain {
                         lista.inserirFim(novo);
                         pilha.push(novo); 
                         System.out.println("Evento  foi cadastrado com sucesso");
+
+                        //envia os dados para o phdmyadmin
+                        gerenciador.salvarEventoNoBanco(novo);
                     }
                     break;
 

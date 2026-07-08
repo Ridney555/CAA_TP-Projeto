@@ -6,7 +6,7 @@ import java.sql.SQLException;
 
 public class BaseDeDados {
     //URl para conectar com o MySQl
-    private static final String URL = "jdbc:mysql://localhost:3306/SGE?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true";
+    private static final String URL = "jdbc:mysql://localhost:3306/SGE1?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true";
     private static final String user = "root"; 
     private static final String password = ""; 
 

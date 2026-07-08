@@ -1,6 +1,6 @@
-create database SGE;
+create database SGE1;
 
-use SGE;
+use SGE1;
 
 create table eventos(
 id int not null,

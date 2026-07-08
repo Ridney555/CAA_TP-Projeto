@@ -109,6 +109,8 @@ public class EventoMain {
                     System.out.print("Digite o ID do evento a remover: ");
                     int idRemover = scanner.nextInt();
                     lista.removerPorId(idRemover);
+                    //remove o evento por id no banco de dados
+                    gerenciador.removerEventoDoBanco(idRemover);
                     break;
 
                 case 5:

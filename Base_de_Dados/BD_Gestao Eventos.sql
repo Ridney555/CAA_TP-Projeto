@@ -21,16 +21,16 @@ primary key(id)
 
 create table inscricao(
 id int not null,
-idParticipante int,
-idEvento int,
+idParticipantes int,
+idEventos int,
 primary key(id),
-foreign key (idParticipante) references Participante(id),
-foreign key (idEvento) references Eventos(id)
+foreign key (idParticipante) references participantes(id),
+foreign key (idEvento) references eventos(id)
 );
 
 describe eventos;
 describe participantes;
-describe eventos;
+describe inscricao;
 
 select * FROM eventos;
 select * FROM particpantes;

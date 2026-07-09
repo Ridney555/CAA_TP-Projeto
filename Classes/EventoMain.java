@@ -18,16 +18,16 @@ public class EventoMain {
         int opcao = -1;
 
         while(opcao != 0) {
-            System.out.println("\n<---------------------------------------->");
-            System.out.println("---------------->  MENU   <-----------------");
-            System.out.println("<------------------------------------------>");
+            System.out.println("|\n---------------------------------------->|");
+            System.out.println("|--------------->  MENU   <-----------------|");
+            System.out.println("|-------------------------------------------|");
             System.out.println("1 -> Cadastrar Evento ");
             System.out.println("2 -> Visualizar Cronograma");
             System.out.println("3 -> Inscrever Participante");
             System.out.println("4 -> Remover Evento por ID");
             System.out.println("5 -> Desfazer Último Cadastro");
             System.out.println("6 -> Gerar Relatorio em Eventos");
-            System.out.println("7 -> Sair");
+            System.out.println("0 -> Sair");
             System.out.print("Escolha uma opção: ");
 
             opcao = scanner.nextInt();
@@ -135,12 +135,13 @@ public class EventoMain {
                     break;
 
                 case 6:
-                    System.out.println("Saindo do sistema...");
-                    break;
-
-                case 7:
                     System.out.println("Gerando relatorio dos eventos...");
                     gerenciador.gerarRelatoriosPDF(lista.retornarTodosEventos());
+                    break;
+
+                case 0: 
+                    System.out.println("Saindo do sistema...");
+                    
                     break;
                 default:
                     System.out.println("Opção inválida!");

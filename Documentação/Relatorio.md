@@ -142,6 +142,32 @@ Escolha uma opção:
 * *`"O evento ja esta lotado"`*: Exibido quando a capacidade definida no cadastro do evento foi atingida e o sistema bloqueia novas adições ao `ArrayList`.
 * *`"Houve uma falha ao conectar com a base de dados"`*: Ocorre se o serviço MySQL estiver desligado ou se as credenciais de acesso (User/Password) em `BaseDeDados.java` estiverem incorretas.
 
+**##Gerador de Relatorios num ficheiro.txt**
+
+Nome do ficheiro (Relatorio_Eventos.txt)
+
+Estrura do relatorio:
+
+
+|------------------------------------------------------|
+|            SISTEMA DE GESTÃO DE EVENTOS              |
+
+
+| RELATÓRIO Dos EVENTOS                                       |
+| -------------------------------------------------------------- |
+| Gerando em: 2026-07-09T11:39:36.600050200                    |
+| Eventos Cadastrados: 1                                       |
+| ----------------------------------------------------         |
+|                                                              |
+| -----------------------------------------------------------  |
+| ID do Evento: 1                                              |
+| Nome:         Worksop                                        |
+| Data:         2026-08-06                                     |
+| Horário:      12:00 até 16:00                              |
+| Capacidade:   50 pessoas                                     |
+| Participantes:    1                                          |
+| ------------------------------------------------------------ |
+
 ---
 
 ## 6. Conclusão

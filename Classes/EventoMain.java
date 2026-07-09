@@ -26,7 +26,8 @@ public class EventoMain {
             System.out.println("3 -> Inscrever Participante");
             System.out.println("4 -> Remover Evento por ID");
             System.out.println("5 -> Desfazer Último Cadastro");
-            System.out.println("6 -> Sair");
+            System.out.println("6 -> Gerar Relatorio em Eventos");
+            System.out.println("7 -> Sair");
             System.out.print("Escolha uma opção: ");
 
             opcao = scanner.nextInt();
@@ -137,6 +138,10 @@ public class EventoMain {
                     System.out.println("Saindo do sistema...");
                     break;
 
+                case 7:
+                    System.out.println("Gerando relatorio dos eventos...");
+                    gerenciador.gerarRelatoriosPDF(lista.retornarTodosEventos());
+                    break;
                 default:
                     System.out.println("Opção inválida!");
             }

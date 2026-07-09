@@ -67,6 +67,7 @@
 <---------------------------------------->
 ---------------->  MENU   <-----------------
 <------------------------------------------>
+
 1 -> Cadastrar Evento
 2 -> Visualizar Cronograma
 3 -> Inscrever Participante
@@ -92,7 +93,9 @@ A inscricao foi feita com sucesso
 4 -> Remover Evento por ID
 5 -> Desfazer Último Cadastro
 6 -> Sair
-Escolha uma opção: <---------------------------------------->
+Escolha uma opção:
+
+ <---------------------------------------->
 ---------------->  MENU   <-----------------
 <------------------------------------------>
 1 -> Cadastrar Evento
@@ -141,12 +144,11 @@ Escolha uma opção:
 
 ---
 
-## 6. Conclusão 
+## 6. Conclusão
 
   O desenvolvimento deste Sistema de Gestão de Eventos permitiu consolidar na prática os conceitos teóricos de Estruturas de Dados Lineares e a sua ponte com a persistência de dados relacional. As estruturas de **Lista Duplamente Ligada** e **Pilha** mostraram-se eficientes e adequadas para os propósitos de manipulação em memória exigidos.
 
 ### Funcionalidades Adicionais para Melhorar o Sistema:
 
-* **Geração de Relatórios:** Integração da biblioteca *iText* ou *JasperReports* para permitir a exportação do cronograma de eventos e das listas de participantes inscritos diretamente para ficheiros em formato PDF.
 * **Automatização de Testes:** Implementação de uma suite de testes unitários com *JUnit* para automatizar a validação dos métodos de inserção, remoção e deteção de conflitos de horário.
 * **Interface Gráfica (GUI):** Evolução da aplicação de terminal para uma interface visual utilizando *JavaFX* ou *Swing*, tornando a experiência do utilizador final mais intuitiva.

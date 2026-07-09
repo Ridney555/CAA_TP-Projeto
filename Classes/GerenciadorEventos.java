@@ -1,5 +1,8 @@
 package Classes;
 
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -116,8 +119,8 @@ public class GerenciadorEventos {
     public void salvarInscricaoNoBanco(int idInscricao, int idParticipante, int idEvento) {
         String sql = "insert into inscricao (id, idParticipantes, idEventos) values (?, ?, ?)";
         
-        try (Connection conn = BaseDeDados.getConnection();
-             PreparedStatement stmt = conn.prepareStatement(sql)) {
+        try(Connection conn = BaseDeDados.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql)){
             
             stmt.setInt(1, idInscricao);
             stmt.setInt(2, idParticipante);
@@ -125,8 +128,43 @@ public class GerenciadorEventos {
             
             stmt.executeUpdate();
             System.out.println("A inscricao foi feita com sucesso");
-        } catch (SQLException e) {
+        }catch(SQLException e) {
             System.out.println("Aconteceu um erro ao salvar a incricao no banco de dados: " + e.getMessage());
+        }
+    }
+
+    public void gerarRelatoriosPDF(Eventos[] eventos){
+        String nomeFicheiro = ("Relatorio_Eventos.txt");
+
+        try(FileWriter fw = new FileWriter(nomeFicheiro);
+         PrintWriter pw = new PrintWriter(fw)) {
+        
+        pw.println("|------------------------------------------------------|");
+        pw.println("|            SISTEMA DE GESTÃO DE EVENTOS              |");
+        pw.println("|              RELATÓRIO Dos EVENTOS                   |");
+        pw.println("|------------------------------------------------------|");
+        pw.println("Gerando em: " + java.time.LocalDateTime.now());
+        pw.println("Eventos Cadastrados: " + eventos.length);
+        pw.println("|----------------------------------------------------\n|");
+        
+        if(eventos.length == 0){
+            pw.println("Nenhum evento foi cadastrado ainda");
+        }else{
+            for (Eventos ev : eventos){
+                pw.println("|-----------------------------------------------------------|");
+                pw.println("ID do Evento: " + ev.getId());
+                pw.println("Nome:         " + ev.getNome());
+                pw.println("Data:         " + ev.getData());
+                pw.println("Horário:      " + ev.getHoraInicio() + " até " + ev.getHoraFim());
+                pw.println("Capacidade:   " + ev.getCapacidadeMaxima() + " pessoas");
+                pw.println("Participantes:    " + ev.getListaParticipantes().size());
+                pw.println("|------------------------------------------------------------|");
+            }
+        }
+            System.out.println("Geracao de Relatorio feito com sucesso: " +nomeFicheiro);
+        
+        }catch(IOException e){
+        System.out.println("Houve um erro ao gerar o relatorio: "+e.getMessage());
         }
     }
 

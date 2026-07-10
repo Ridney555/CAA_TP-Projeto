@@ -140,10 +140,10 @@ public class GerenciadorEventos {
          PrintWriter pw = new PrintWriter(fw)) {
         
         pw.println("|------------------------------------------------------|");
-        pw.println("|            SISTEMA DE GESTÃO DE EVENTOS              |");
-        pw.println("|              RELATÓRIO Dos EVENTOS                   |");
+        pw.println("|            Sistema de Gestao de Eventos              |");
+        pw.println("|              Relatorio dos Eventos                   |");
         pw.println("|------------------------------------------------------|");
-        pw.println("Gerando em: " + java.time.LocalDateTime.now());
+        pw.println("Gerando em: " + java.time.LocalDateTime.now());  //gera a data e hora exata no ficheiro do relatorio
         pw.println("Eventos Cadastrados: " + eventos.length);
         pw.println("|----------------------------------------------------\n|");
         
@@ -164,7 +164,7 @@ public class GerenciadorEventos {
             System.out.println("Geracao de Relatorio feito com sucesso: " +nomeFicheiro);
         
         }catch(IOException e){
-        System.out.println("Houve um erro ao gerar o relatorio: "+e.getMessage());
+            System.out.println("Houve um erro ao gerar o relatorio: "+e.getMessage());
         }
     }
 

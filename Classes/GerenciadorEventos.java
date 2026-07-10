@@ -28,10 +28,10 @@ public class GerenciadorEventos {
     estiver lotada, o metodo ira inscrever o participante no evento e adicionar o participante a lista de participantes
     */ 
     public void increverParticipantes(Participante participante, Eventos evento){
-        if (evento.getListaParticipantes().size() < evento.getCapacidadeMaxima()) {
+        if(evento.getListaParticipantes().size() < evento.getCapacidadeMaxima()){
             evento.getListaParticipantes().add(participante);
-            System.out.println("Participante " + participante.getNome() + " inscrito com sucesso no evento: " + evento.getNome());
-        } else {
+            System.out.println("Participante "+participante.getNome() +" inscrito com sucesso no evento: "+evento.getNome());
+        }else{
             System.out.println("O evento ja esta lotado");
         }
     }
@@ -42,9 +42,9 @@ public class GerenciadorEventos {
     public void remover(Participante participante, Eventos evento){
         if (evento.getListaParticipantes().contains(participante)) {
             evento.getListaParticipantes().remove(participante);
-            System.out.println("Participante removido do evento " + evento.getNome());
+            System.out.println("Participante removido do evento "+evento.getNome());
         } else {
-            System.out.println("Participante não está inscrito no evento " + evento.getNome());
+            System.out.println("Participante não está inscrito no evento "+evento.getNome());
         }
     }
 
@@ -68,7 +68,7 @@ public class GerenciadorEventos {
             System.out.println("O Evento foi Gravado com Sucesso no banco de dados");
             
         }catch(SQLException e){
-            System.out.println("Houve um erro ao salvar na base de dados: " + e.getMessage());
+            System.out.println("Houve um erro ao salvar na base de dados: "+e.getMessage());
         }
     }
 
@@ -86,10 +86,10 @@ public class GerenciadorEventos {
             if (linhasAfetadas > 0) {
                 System.out.println("O Evento de id " + id + " foi apagado com sucesso do banco de dados");
             }else{
-                System.out.println("Nao existe nenhum evento com esse id " + id + " no banco de dados");
+                System.out.println("Nao existe nenhum evento com esse id "+ id +" no banco de dados");
             }
         }catch(SQLException e){
-            System.out.println("Aconteceu um erro ao remover o evento da base de dados: " + e.getMessage());
+            System.out.println("Aconteceu um erro ao remover o evento da base de dados: "+e.getMessage());
         }
     }
 
@@ -110,7 +110,7 @@ public class GerenciadorEventos {
             if (e.getErrorCode() == 1062) { 
                 System.out.println("O participante foi cadastrado com sucesso no banco de dados");
             } else {
-                System.out.println("Aconteceu um erro ao salvar p participante" + e.getMessage());
+                System.out.println("Aconteceu um erro ao salvar p participante"+e.getMessage());
             }
         }
     }
@@ -129,7 +129,7 @@ public class GerenciadorEventos {
             stmt.executeUpdate();
             System.out.println("A inscricao foi feita com sucesso");
         }catch(SQLException e) {
-            System.out.println("Aconteceu um erro ao salvar a incricao no banco de dados: " + e.getMessage());
+            System.out.println("Aconteceu um erro ao salvar a incricao no banco de dados: "+e.getMessage());
         }
     }
 
@@ -161,7 +161,7 @@ public class GerenciadorEventos {
                 pw.println("|------------------------------------------------------------|");
             }
         }
-            System.out.println("Geracao de Relatorio feito com sucesso: " +nomeFicheiro);
+            System.out.println("Geracao de Relatorio feito com sucesso: "+nomeFicheiro);
         
         }catch(IOException e){
             System.out.println("Houve um erro ao gerar o relatorio: "+e.getMessage());

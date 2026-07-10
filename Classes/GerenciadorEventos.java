@@ -52,8 +52,8 @@ public class GerenciadorEventos {
     public void salvarEventoNoBanco(Eventos evento){
         String sql = "insert into eventos (id, nome, Data, horaInicio, horaFim, capcidadeMaxima) values (?, ?, ?, ?, ?, ?)";
         
-        try(Connection conn = BaseDeDados.getConnection();
-             PreparedStatement stmt = conn.prepareStatement(sql)){
+        try(Connection conct = BaseDeDados.getConnection();
+             PreparedStatement stmt = conct.prepareStatement(sql)){
             
             stmt.setInt(1, evento.getId());
             stmt.setString(2, evento.getNome());
@@ -88,7 +88,7 @@ public class GerenciadorEventos {
             }else{
                 System.out.println("Nao existe nenhum evento com esse id " + id + " no banco de dados");
             }
-        }catch (SQLException e){
+        }catch(SQLException e){
             System.out.println("Aconteceu um erro ao remover o evento da base de dados: " + e.getMessage());
         }
     }
@@ -97,8 +97,8 @@ public class GerenciadorEventos {
     public void salvarParticipanteNoBanco(Participante participante) {
         String sql = "insert into participantes (id, nome, telefone) values (?, ?, ?)";
         
-        try(Connection conn = BaseDeDados.getConnection();
-             PreparedStatement stmt = conn.prepareStatement(sql)){
+        try(Connection conct = BaseDeDados.getConnection();
+             PreparedStatement stmt = conct.prepareStatement(sql)){
             
             stmt.setInt(1, participante.getId());
             stmt.setString(2, participante.getNome());
@@ -119,8 +119,8 @@ public class GerenciadorEventos {
     public void salvarInscricaoNoBanco(int idInscricao, int idParticipante, int idEvento) {
         String sql = "insert into inscricao (id, idParticipantes, idEventos) values (?, ?, ?)";
         
-        try(Connection conn = BaseDeDados.getConnection();
-             PreparedStatement stmt = conn.prepareStatement(sql)){
+        try(Connection conct = BaseDeDados.getConnection();
+             PreparedStatement stmt = conct.prepareStatement(sql)){
             
             stmt.setInt(1, idInscricao);
             stmt.setInt(2, idParticipante);
